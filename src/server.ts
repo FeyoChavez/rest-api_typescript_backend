@@ -3,18 +3,18 @@ import router from './router';
 import db from './config/db';
 import colors from 'colors';
 
-async function connectDB() {
+export async function connectDB() {
   try {
     await db.authenticate();
-    console.log(colors.green('Conexión exitosa con la base de datos'));
+    //console.log(colors.green('Conexión exitosa con la base de datos'));
 
     // IMPORTANT: espera a que termine la sincronización
     await db.sync({ alter: true });
-    console.log(colors.blue('Tablas sincronizadas correctamente'));
+    //console.log(colors.blue('Tablas sincronizadas correctamente'));
 
   } catch (error) {
-    console.log(colors.red.bold('Error al conectar o sincronizar la base de datos'));
-    console.error(error);
+    console.log(colors.red.bold('Error al conectar a la base de datos'));
+    //console.error(error);
   }
 }
 

@@ -3,23 +3,18 @@ import Product from '../models/Product.model';
 
 // GET
 export const getProducts = async (req, res) => {
-    try {
-        const products = await Product.findAll({
+    const products = await Product.findAll({
             order: [
                 ['price', 'DESC']
             ], 
             // attributes: {exclude: ['createdAt', 'updatedAt', 'availability']} excluye estos campos
         })
-        res.json({data : products})
-    } catch (error) {
-        console.log(error)
-    }
+        res.json({data:products})
 }
 
 // GET BY ID
 export const getProductById = async (req, res) => {
-    try {
-        const {id} = req.params
+    const {id} = req.params
         const product = await Product.findByPk(id)
 
         if(!product) {
@@ -29,21 +24,12 @@ export const getProductById = async (req, res) => {
         }
 
         res.json({data: product})
-    } catch (error) {
-        console.log(error)
-    }
 }
 
 // POST
 export const createProduct = async (req: Request, res: Response) => {
-try {
     const product = await Product.create(req.body) // crea el objeto y lo guarda en la bd
-    res.json({data: product}) // retornamos el product de la bd
-
-} catch (error) {
-    console.log(error)
-}
-
+    res.status(201).json({data: product}) // retornamos el product de la bd
 }
 
 // PUT : actualiza / remplaza todo el elemento

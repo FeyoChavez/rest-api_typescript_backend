@@ -9,7 +9,7 @@ const db = new Sequelize(process.env.DATABASE_URL!, {
   dialectOptions: {
     ssl: { require: true, rejectUnauthorized: false } // si tu DB está en Render o similar
   },
-  logging: console.log, // para ver los CREATE TABLE
+  logging: false  // console.log,  para ver los CREATE TABLE
 });
 
 export default db;
