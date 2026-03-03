@@ -15,8 +15,8 @@ A robust and scalable RESTful API designed for product inventory management. Thi
 * **Live Documentation:** Interactive API explorer powered by Swagger.
 
 ## ⚙️ Quick Start
-* **Clone & Install:** npm install
-* **Database Setup:** Configure your .env for Sequelize.
-* **Run Tests:** npm test
-* **Development:** npm run dev
-* **Docs:** Access /api-docs to view the Swagger UI.
+* **Clone & Install:** `npm install`
+* **Database Setup:** Configure your `.env` for Sequelize.
+* **Run Tests:** `npm test`
+* **Development:** `npm run dev`
+* **Docs:** Access /api-docs to view the `Swagger UI`
